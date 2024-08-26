@@ -1,0 +1,335 @@
+/* Main container styling */
+.full-screen-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+/* NAVBAR STYLE */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  gap: 10vw;
+}
+
+/* Navbar search bar styling */
+.navbar-search {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 42%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: #212121;
+  margin-left: 0.5rem;
+  flex: 1;
+}
+
+/* TEMPERATURE TOGGLER STYLING */
+.temperatureType-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  width: 60px;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: rgba(255, 250, 250, 0.884);
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.4s ease;
+  box-shadow: 4px 4px 8px rgba(184, 148, 148, 0.2);
+}
+
+.toggle-icon {
+  width: 50%;
+  height: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+  font-size: 15px;
+  color: black;
+}
+
+.temperatureType-toggler .toggle-icon.celsius {
+  transform: translateX(0);
+  background-color: #00bcd4;
+  color: #fff;
+  justify-content: center;
+}
+
+.temperatureType-toggler .toggle-icon.fahrenheit {
+  transform: translateX(30px);
+  background-color: #ff9800;
+  color: #fff;
+  justify-content: center;
+}
+
+/* MAIN-CONTAINER STYLE */
+.main-content {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  flex: 1;
+}
+
+/* Current city weather card container */
+.weather-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+/* 5-day forecast container */
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin-top: 22px;
+}
+
+/* ========= Current Weather cards styling ============= */
+/* Weather Icon and Temperature */
+.weather-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0; /* Combined margin-top and margin-bottom */
+}
+
+/* Weather Icon */
+.weather-icon {
+  width: 6rem;
+  height: 6rem;
+}
+
+.weather-icon-md {
+  width: 8rem;
+  height: 8rem;
+}
+
+/* Weather Temperature */
+.weather-temperature {
+  font-weight: bold;
+  font-size: 1.875rem; /* Default font-size */
+}
+
+.weather-temperature-md {
+  font-size: 2.25rem;
+}
+
+.weather-temperature-lg {
+  font-size: 3rem;
+}
+
+.unit {
+  font-size: 1rem;
+}
+
+/* Min and Max Temperature */
+.temp-info-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem; /* Added gap between items */
+  margin-top: 1rem;
+}
+
+.temp-info {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+.temp-info.min {
+  color: #2563eb;
+}
+
+.temp-info.max {
+  color: #ef4444;
+}
+
+/* Place, Date, and Time */
+.place-date-time {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.125rem;
+  margin-top: 1rem;
+}
+
+.date-time-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.date-time {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  background-color: #f9fafb;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Wind and Humidity */
+.wind-humidity-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem; /* Added gap between items */
+  margin-top: 1rem;
+}
+
+.wind-info,
+.humidity-info {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+.wind-info {
+  background-color: #2563eb;
+  color: white;
+}
+
+.humidity-info {
+  background-color: #16a34a;
+  color: white;
+}
+
+/* Weather Conditions */
+.weather-conditions {
+  margin-top: 1.25rem;
+  border-top: 1px solid #4b5563;
+  padding-top: 0.5rem;
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+.weather-conditions-md {
+  font-size: 1.5rem;
+}
+
+.weather-conditions-lg {
+  font-size: 1.875rem;
+}
+
+/* ========= Forecast cards styling ============= */
+/* Forecast Card Container */
+.forecast-day-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 0.5rem;
+  gap: 0.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Date Paragraph */
+.forecast-day-card .date {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Image */
+.forecast-day-card .icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Icon String Paragraph */
+.forecast-day-card .icon-string {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+/* Temperature Paragraph */
+.forecast-day-card .temperature {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Temperature Unit */
+.forecast-day-card .temperature-unit {
+  font-size: 0.875rem;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .main-content {
+    margin-top: 4rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .weather-card-container,
+  .forecast-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .glassCard {
+    width: 99vw;
+    padding: 8px;
+    margin-top: 5px;
+  }
+}
+
+/* Glass Card Style */
+.glassCard {
+  background: rgba(211, 208, 208, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(228, 218, 218, 0.508);
+  padding: 8px 25px;
+  width: fit-content;
+}
