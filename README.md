@@ -1,5 +1,9 @@
 # Demo: https://atul-patel-wasserstoff.onrender.com
 
+# Preview:
+![Screenshot 2024-09-04 172832](https://github.com/user-attachments/assets/dec9c573-16c0-403d-85fc-9c0c49da55b4)
+![Screenshot 2024-09-04 172740](https://github.com/user-attachments/assets/dd0d0d32-a56b-4a32-84c7-47a73ce84333)
+
 ## Overview
 
 This is a weather application built using React and Vite. It provides current weather information and a 5-day forecast for any city. The app features a responsive design and includes temperature toggling between Celsius and Fahrenheit.
