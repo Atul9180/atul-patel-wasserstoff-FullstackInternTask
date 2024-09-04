@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 // Convert temperature from Celsius to Fahrenheit
 export const convertToFahrenheit = (celsius) => {
-  return parseFloat(((celsius * 9) / 5 + 32).toFixed(2));
+  return parseFloat(((celsius * 9) / 5 + 32).toFixed(1));
 };
 
 // Fetch weather data
@@ -28,7 +28,6 @@ export const fetchWeatherData = async (url, API, place) => {
     const response = await axios.request(options);
     return response.data;
   } catch (error) {
-    toast.error("Error fetching weather data.Try after some time.");
-    throw new Error("Error fetching weather data: ", error);
+    throw new Error("Error fetching weather data. ", error);
   }
 };

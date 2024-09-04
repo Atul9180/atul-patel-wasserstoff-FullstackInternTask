@@ -17,11 +17,11 @@ const useWeatherApi = (url, API, place) => {
       try {
         const data = await fetchWeatherData(url, API, place);
         const result = Object.values(data.locations)[0];
-
         // Segregate required temperatures-- for conversion to Fahrenheit
         const currentDayTemp = result.values[0].temp;
         const currentDayMinTemp = result.values[0].mint;
         const currentDayMaxTemp = result.values[0].maxt;
+        const currentDayFeelsLikeTemp = result.values[0].heatindex;
         const forecastTemps = result.values.slice(1, 7).map((day) => day.temp);
 
         // Store Celsius temperatures
@@ -29,6 +29,7 @@ const useWeatherApi = (url, API, place) => {
           currentDayTemp,
           currentDayMinTemp,
           currentDayMaxTemp,
+          currentDayFeelsLikeTemp,
           forecastTemps,
         });
 
@@ -37,6 +38,7 @@ const useWeatherApi = (url, API, place) => {
           currentDayTemp: convertToFahrenheit(currentDayTemp),
           currentDayMinTemp: convertToFahrenheit(currentDayMinTemp),
           currentDayMaxTemp: convertToFahrenheit(currentDayMaxTemp),
+          currentDayFeelsLikeTemp: convertToFahrenheit(currentDayFeelsLikeTemp),
           forecastTemps: forecastTemps.map((temp) => convertToFahrenheit(temp)),
         });
 
@@ -44,9 +46,9 @@ const useWeatherApi = (url, API, place) => {
         setForecastData(result.values); // For forecast data
         setWeather(result.values[0]); // For current day data
       } catch (error) {
-        console.error("Error fetching weather data:", error);
+        console.log(error);
         toast.error(
-          "Input city not found. City name incorrect or server-side error."
+          "Input city not found. City name incorrect or server-side error"
         );
       } finally {
         setIsLoading(false);
@@ -56,6 +58,7 @@ const useWeatherApi = (url, API, place) => {
     fetchData();
   }, [place, url, API]);
 
+  // get data
   const getTemperatureData = () => {
     return unit === "metric" ? celciusTemperature : fahrenheitTemperature;
   };
